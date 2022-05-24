@@ -1,0 +1,79 @@
+$primary: #01f195;
+$theme: #dffcf1;
+$white: #ffffff;
+$color: #242424;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 14px;
+  overflow-x: hidden;
+}
+a,
+button {
+  transition: 100ms ease-in-out;
+}
+a:hover,
+button:hover {
+  transition: 300ms ease-in-out;
+}
+.button {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  padding: 0em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color;
+  cursor: pointer;
+}
+.button__icon {
+  width: 35px;
+}
+.button__text,
+.button__icon__text {
+  padding: 0em 1em;
+}
+.button__icon__text svg {
+  margin-right: 0.5em;
+}
+.button:hover {
+  background-color: $primary;
+}
+.container {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $white;
+}
+.container__sidebar {
+  position: sticky;
+  top: 0px;
+  background-color: $theme;
+  padding: 2em;
+  border-radius: 10px;
+  flex: 1;
+  max-width: 300px;
+  max-height: calc(100vh);
+}
+.container__sidebar__header {
+}
+.container__sidebar__main {
+}
+.container__sidebar__footer {
+}
+.container__main {
+  background-color: #effaf6;
+  flex: 1;
+  border-radius: 10px;
+  padding: 2em;
+}
