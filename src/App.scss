@@ -25,7 +25,7 @@ button:hover {
   transition: 300ms ease-in-out;
 }
 .button {
-  background-color: transparent;
+  background-color: $theme;
   border: none;
   border-radius: 5px;
   height: 35px;
@@ -48,6 +48,94 @@ button:hover {
 }
 .button:hover {
   background-color: $primary;
+}
+.input__box {
+  display: flex;
+  align-items: center;
+}
+.input__box__textarea {
+  align-items: flex-start;
+}
+.input__box__textarea .input__box__label {
+  margin-top: 0.8em;
+}
+.input__box__label {
+  margin-right: 0.5em;
+  color: $color;
+  text-transform: capitalize;
+}
+.input__box__field {
+  background-color: $theme;
+  border: 1px solid $theme;
+  outline: none;
+  height: 40px;
+  padding: 0em 1em;
+  border-radius: 5px;
+}
+.input__box__field:hover,
+.input__box__field:focus {
+  border-color: $primary;
+}
+.ck-toolbar {
+  background-color: $theme !important;
+  border-color: $theme !important;
+  border-radius: 5px 5px 0px 0px !important;
+}
+.ck-toolbar svg {
+  width: 15px !important;
+  height: 15px !important;
+  fill: $color !important;
+}
+.ck-button {
+  font-size: 13px !important;
+  border-radius: 5px !important;
+}
+.ck-button:hover {
+  background-color: #01f195 !important;
+}
+.ck-dropdown__arrow {
+  width: 13px !important;
+  height: 13px !important;
+  z-index: 0 !important;
+}
+.ck-on {
+  background-color: #01f195 !important;
+}
+.ck-list {
+  background-color: $theme !important;
+  border-color: $theme !important;
+}
+.ck-dropdown__panel {
+  border: none !important;
+  border-radius: 5px !important;
+}
+.ck-editor__editable {
+  border-color: transparent !important;
+  box-shadow: none !important;
+  height: 200px !important;
+  border-radius: 0px 0px 5px 5px !important;
+}
+.ck-editor__editable::-webkit-scrollbar {
+  width: 8px !important;
+}
+.ck-editor__editable::-webkit-scrollbar-thumb {
+  background-color: $primary !important;
+  border-radius: 50px;
+}
+.ck-editor__editable::-webkit-scrollbar-track {
+  background-color: $theme !important;
+}
+.react-daterange-picker__wrapper,
+.react-date-picker__wrapper {
+  background-color: $theme !important;
+  border: none !important;
+  padding: 0em 1em !important;
+  height: 40px !important;
+}
+.react-daterange-picker__wrapper *,
+.react-date-picker__wrapper * {
+  outline: none !important;
+  color: $color !important;
 }
 .container {
   display: flex;
