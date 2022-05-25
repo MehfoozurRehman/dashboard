@@ -9,6 +9,7 @@ import {
   InputTime,
   InputTextMulti,
 } from "components";
+import Avatar from "./Avatar";
 
 export default function Components() {
   const [value, onChange] = useState(new Date());
@@ -84,6 +85,22 @@ export default function Components() {
         // onFocus={(event, editor) => {
         //   console.log("Focus.", editor);
         // }}
+      />
+      <Avatar alt="hello workd" size="lg" />
+      <Avatar
+        pic="https://www.w3schools.com/howto/img_avatar.png"
+        size="lg"
+        alt="hello"
+      />
+      <Avatar
+        pic="https://www.w3schools.com/howto/img_avatar.png"
+        size="md"
+        alt="hello"
+      />
+      <Avatar
+        pic="https://www.w3schools.com/howto/img_avatar.png"
+        alt="hello"
+        size="sm"
       />
     </>
   );

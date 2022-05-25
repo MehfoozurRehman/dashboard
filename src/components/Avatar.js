@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Avatar(props) {
   return (
@@ -26,3 +27,8 @@ export default function Avatar(props) {
     </button>
   );
 }
+Avatar.propTypes = {
+  pic: PropTypes.string,
+  alt: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
+};
