@@ -3,7 +3,7 @@ import DatePicker from "react-date-picker";
 
 export default function InputDate(props) {
   return (
-    <div className="input__box">
+    <div className="input__box" style={props.style}>
       <label htmlFor={props.placeholder} className="input__box__label">
         {props.placeholder}
       </label>

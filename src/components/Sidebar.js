@@ -1,123 +1,128 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ChevronsLeft,
   ChevronsRight,
   Grid,
   LogOut,
-  Menu,
   Pocket,
   Server,
   ShoppingCart,
 } from "react-feather";
-import { useNavigate } from "react-router-dom";
-import ButtonIcon from "./ButtonIcon";
+import OutsideClickHandler from "react-outside-click-handler";
 
 export default function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   console.log(window.location.pathname);
   return (
-    <div
-      className={
-        sidebarOpen
-          ? "container__sidebar container__sidebar__open"
-          : "container__sidebar"
-      }
+    <OutsideClickHandler
+      onOutsideClick={() => {
+        setSidebarOpen(false);
+      }}
     >
-      <div className="container__sidebar__header">
-        <NavLink
-          noCheck={true}
-          icon={
-            sidebarOpen ? (
-              <ChevronsLeft size={18} color="currentColor" />
-            ) : (
-              <ChevronsRight size={18} color="currentColor" />
-            )
-          }
-          label={sidebarOpen ? "Close Sidebar" : "Open Sidebar"}
-          onClick={() => {
-            setSidebarOpen(!sidebarOpen);
-          }}
-        />
+      <div
+        className={
+          sidebarOpen
+            ? "container__sidebar container__sidebar__open"
+            : "container__sidebar"
+        }
+      >
+        <div className="container__sidebar__header">
+          <NavLink
+            noCheck={true}
+            icon={
+              sidebarOpen ? (
+                <ChevronsLeft size={18} color="currentColor" />
+              ) : (
+                <ChevronsRight size={18} color="currentColor" />
+              )
+            }
+            label={sidebarOpen ? "Close Sidebar" : "Open Sidebar"}
+            onClick={() => {
+              setSidebarOpen(!sidebarOpen);
+            }}
+          />
+        </div>
+        <div className="container__sidebar__main">
+          <NavLink
+            icon={<Grid strokeWidth={1.5} size={18} color="currentColor" />}
+            label="Dashboard"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={<Server strokeWidth={1.5} size={18} color="currentColor" />}
+            label="Table"
+            to="/dashboard/table"
+          />
+          <NavLink
+            icon={<Pocket strokeWidth={1.5} size={18} color="currentColor" />}
+            label="Form"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={
+              <ShoppingCart strokeWidth={1.5} size={18} color="currentColor" />
+            }
+            label="Components"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={<Grid strokeWidth={1.5} size={18} color="currentColor" />}
+            label="Dashboard"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={<Server strokeWidth={1.5} size={18} color="currentColor" />}
+            label="Table"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={<Pocket strokeWidth={1.5} size={18} color="currentColor" />}
+            label="Form"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={
+              <ShoppingCart strokeWidth={1.5} size={18} color="currentColor" />
+            }
+            label="Components"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={<Grid strokeWidth={1.5} size={18} color="currentColor" />}
+            label="Dashboard"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={<Server strokeWidth={1.5} size={18} color="currentColor" />}
+            label="Table"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={<Pocket strokeWidth={1.5} size={18} color="currentColor" />}
+            label="Form"
+            to="/dashboard"
+          />
+          <NavLink
+            icon={
+              <ShoppingCart strokeWidth={1.5} size={18} color="currentColor" />
+            }
+            label="Components"
+            to="/dashboard"
+          />
+        </div>
+        <div className="container__sidebar__footer">
+          <NavLink
+            icon={<LogOut size={18} color="currentColor" />}
+            label="Logout"
+            to="/"
+            onChange={() => {
+              console.log("logout");
+            }}
+          />
+        </div>
       </div>
-      <div className="container__sidebar__main">
-        <NavLink
-          icon={<Grid strokeWidth={1.5} size={18} color="currentColor" />}
-          label="Dashboard"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={<Server strokeWidth={1.5} size={18} color="currentColor" />}
-          label="Table"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={<Pocket strokeWidth={1.5} size={18} color="currentColor" />}
-          label="Form"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={
-            <ShoppingCart strokeWidth={1.5} size={18} color="currentColor" />
-          }
-          label="Components"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={<Grid strokeWidth={1.5} size={18} color="currentColor" />}
-          label="Dashboard"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={<Server strokeWidth={1.5} size={18} color="currentColor" />}
-          label="Table"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={<Pocket strokeWidth={1.5} size={18} color="currentColor" />}
-          label="Form"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={
-            <ShoppingCart strokeWidth={1.5} size={18} color="currentColor" />
-          }
-          label="Components"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={<Grid strokeWidth={1.5} size={18} color="currentColor" />}
-          label="Dashboard"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={<Server strokeWidth={1.5} size={18} color="currentColor" />}
-          label="Table"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={<Pocket strokeWidth={1.5} size={18} color="currentColor" />}
-          label="Form"
-          to="/dashboard"
-        />
-        <NavLink
-          icon={
-            <ShoppingCart strokeWidth={1.5} size={18} color="currentColor" />
-          }
-          label="Components"
-          to="/dashboard"
-        />
-      </div>
-      <div className="container__sidebar__footer">
-        <NavLink
-          icon={<LogOut size={18} color="currentColor" />}
-          label="Logout"
-          to="/"
-          onChange={() => {
-            console.log("logout");
-          }}
-        />
-      </div>
-    </div>
+    </OutsideClickHandler>
   );
 }
 

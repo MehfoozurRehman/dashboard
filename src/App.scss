@@ -65,6 +65,13 @@ button:hover {
   display: flex;
   align-items: center;
 }
+.input__box * {
+  font-size: 14px !important;
+}
+.input__box__search {
+  width: 100%;
+  max-width: 500px;
+}
 .input__box__textarea {
   align-items: flex-start;
 }
@@ -143,10 +150,29 @@ button:hover {
   border: none !important;
   padding: 0em 1em !important;
   height: 35px !important;
+  border-radius: 5px !important;
 }
 .react-daterange-picker__wrapper *,
 .react-date-picker__wrapper * {
   outline: none !important;
+  color: $color !important;
+}
+.css-1s2u09g-control {
+  background-color: $theme !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 200px;
+}
+.css-1s2u09g-control * {
+  color: $color !important;
+}
+.css-1pahdxg-control {
+  background-color: $theme !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 200px;
+}
+.css-1pahdxg-control * {
   color: $color !important;
 }
 .container {
@@ -156,22 +182,22 @@ button:hover {
   background-color: $white;
 }
 .container__sidebar {
-  position: sticky;
+  position: absolute;
   top: 0px;
-  background-color: #effaf6;
+  background-color: $white;
   padding: 1em;
   border-radius: 10px;
   flex: 1;
   max-width: 65px;
-
-  min-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 999;
+  min-height: 100vh;
+  z-index: 9999;
 }
 .container__sidebar__open {
   max-width: 250px;
+  width: 100%;
 }
 .container__sidebar__open .container__sidebar__header {
   display: flex;
@@ -185,17 +211,17 @@ button:hover {
 .container__sidebar__open
   .container__sidebar__main__entry__input
   ~ .container__sidebar__main__entry__content {
-  background-color: $theme;
   border-radius: 5px;
+  background-color: $theme;
 }
-.container__sidebar__open
-  .container__sidebar__main__entry__input:hover
-  ~ .container__sidebar__main__entry__content,
-.container__sidebar__open
-  .container__sidebar__main__entry__input:checked
-  ~ .container__sidebar__main__entry__content {
-  background-color: $primary;
-}
+// .container__sidebar__open
+//   .container__sidebar__main__entry__input:hover
+//   ~ .container__sidebar__main__entry__content,
+// .container__sidebar__open
+//   .container__sidebar__main__entry__input:checked
+//   ~ .container__sidebar__main__entry__content {
+//   background-color: $primary;
+// }
 .container__sidebar__main__entry__content__reverse,
 .container_sidebar__main__entry__content__reverse
   .container__sidebar__main__entry__content__icon {
@@ -268,7 +294,53 @@ button:hover {
   flex: 1;
   border-radius: 10px;
   padding: 2em;
+  margin-left: calc(60px);
+}
+.container__main__header {
+  margin-bottom: 1em;
+  position: sticky;
+  top: 2em;
+  z-index: 999;
 }
 .container__main__content {
-  background-color: aqua;
+  width: calc(100vw - 4em - 60px);
+}
+.container__main__content__heading {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: $color;
+}
+.container__main__content__heading svg {
+  margin-right: 0.8em;
+}
+.container__main__content__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em 0em;
+}
+.container__main__content__top__left {
+  flex: 1;
+}
+.container__main__content__top__right {
+  display: flex;
+  align-items: center;
+}
+.container__main__content__table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  background-color: #01f195;
+  height: 500px;
+}
+.container__main__content__table__header {
+  display: flex;
+  align-items: center;
+  background-color: #01f195;
+}
+.container__main__content__table__header__entry {
+  display: flex;
+  min-width: 200px;
 }

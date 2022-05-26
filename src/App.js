@@ -1,10 +1,13 @@
 import Components from "components/Components";
-import React from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Sidebar from "./components/Sidebar";
+import { InputDate } from "components";
+import InputSelect from "components/InputSelect";
+import { Grid } from "react-feather";
 
 export default function App() {
   return (
@@ -52,69 +55,163 @@ export default function App() {
         }
       >
         <Route path="" element={<Components />} />
-        <Route path="settings" element={<Settings />} />
+        <Route path="table" element={<Table />} />
       </Route>
       <Route path="*" element={<div>404</div>} />
     </Routes>
   );
 }
-function Settings() {
+function Table() {
+  const [range, onRangeChange] = useState([new Date(), new Date()]);
+  const options = [
+    { value: "chocolate", label: "Chocolate" },
+    { value: "strawberry", label: "Strawberry" },
+    { value: "vanilla", label: "Vanilla" },
+  ];
   return (
-    <div>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam facilis
-      recusandae corrupti alias quae provident facere rem, quasi nesciunt
-      doloribus enim aliquid tempore est amet perferendis vitae, dolorum eaque
-      voluptates nulla earum, sapiente unde dolore? Temporibus tempore deserunt,
-      illum nesciunt in unde eligendi ex ea possimus nisi quas debitis
-      perferendis expedita exercitationem cumque aliquam illo fuga excepturi non
-      vel tenetur ullam. Voluptatem deleniti iure, labore enim neque dolore
-      earum! Ea, maxime rerum ipsa unde temporibus nesciunt officia dolores.
-      Quos alias unde dolorum reiciendis facilis ducimus velit ratione ea
-      sapiente! A reiciendis obcaecati quia aut praesentium suscipit consectetur
-      sint ipsam corrupti blanditiis nemo ducimus sed consequuntur, accusantium
-      quis temporibus ad fuga in eaque iure minima? Veritatis mollitia,
-      consequuntur fugiat, quo alias incidunt harum repellat earum
-      exercitationem ut vitae, doloremque magnam. Laudantium, labore ducimus.
-      Harum numquam, id ex accusamus impedit labore sunt? Cum vitae labore quos
-      aliquam laborum voluptatibus magni rem aspernatur? Error, excepturi facere
-      quae dolor reiciendis corporis cupiditate voluptatum ad consectetur quis
-      culpa iure similique commodi molestias provident neque ea magnam dolorem
-      magni? Ratione voluptatum doloribus quisquam aut ab qui explicabo
-      recusandae accusantium. Repellat doloribus dolorem iste numquam veritatis
-      voluptatum, perspiciatis aspernatur consequuntur omnis distinctio quisquam
-      est dicta excepturi nisi, officia deleniti porro corporis debitis dolorum
-      obcaecati explicabo ipsa sed praesentium! Possimus quos veniam facere
-      aperiam quam repudiandae quas unde voluptatum reiciendis laboriosam harum
-      libero ratione consequuntur excepturi illum earum, similique, nam cumque.
-      Doloribus corrupti nobis in excepturi natus eum. Omnis, possimus deleniti
-      ipsa non quasi modi alias laborum, dicta asperiores hic molestias maxime
-      fugit voluptas at magnam aspernatur cupiditate? Ex a nulla cumque eligendi
-      laboriosam, aut, cum hic adipisci earum molestiae dignissimos labore
-      sapiente necessitatibus quis, natus nesciunt? Dolores voluptatibus soluta
-      eum alias! Eaque magni labore cumque repellat saepe totam error
-      voluptatibus ratione dolorem obcaecati asperiores, aut consequuntur? Ipsa
-      animi error natus quas nobis veritatis ad reprehenderit optio consequatur
-      architecto omnis expedita nulla earum cupiditate, sit est quod minus
-      facere explicabo voluptatem magnam distinctio aperiam doloremque! Ullam
-      iure laborum optio possimus, adipisci reiciendis perferendis, hic nisi
-      numquam maiores dolorum animi alias sed tempora laboriosam et eveniet
-      quidem? Itaque vel, unde, sequi ea ipsam ipsa placeat sapiente sed
-      quisquam eum est, doloribus nihil consequatur esse debitis perspiciatis ad
-      molestiae voluptatibus tempora minima? Saepe, aperiam mollitia ex
-      inventore error consequatur neque, quo autem fugiat facere assumenda esse
-      doloribus labore quam consectetur culpa quasi illo non vitae voluptate
-      soluta quidem? Illum debitis reprehenderit ullam alias soluta nam
-      doloremque mollitia quam quia dolores amet accusantium, recusandae
-      pariatur saepe repellendus, quos voluptas sapiente quibusdam ad, tempore
-      velit. Sunt ipsam, iure sed numquam, odit, cupiditate recusandae eligendi
-      praesentium facilis itaque adipisci architecto? Ducimus iure adipisci
-      nostrum omnis rerum! Aperiam ad, rerum a, magni eveniet asperiores quae
-      sunt beatae cum autem ratione! Libero blanditiis cumque optio magni autem
-      dignissimos velit quibusdam dolorum dolore harum obcaecati, doloremque
-      atque odio aliquam esse, incidunt impedit pariatur quam asperiores!
-      Sapiente molestiae earum nobis optio eveniet aut assumenda laudantium illo
-      animi commodi atque placeat labore, sequi temporibus in. Eius, laudantium
-      debitis.
-    </div>
+    <>
+      <div className="container__main__content__heading">
+        <Grid size={30} strokeWidth={1.5} color="currentColor" />
+        Table name
+      </div>
+      <div className="container__main__content__top">
+        <div className="container__main__content__top__left">
+          <input
+            type="text"
+            placeholder="Search"
+            className="input__box__field input__box__search"
+          />
+        </div>
+        <div className="container__main__content__top__right">
+          <InputDate
+            placeholder="hello"
+            onChange={onRangeChange}
+            value={range}
+            range={true}
+            style={{ marginRight: "1em" }}
+          />
+          <InputSelect placeholder="hello" options={options} />
+        </div>
+      </div>
+      <div className="container__main__content__table">
+        <div className="container__main__content__table__header">
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+          <div className="container__main__content__table__header__entry">
+            hello
+          </div>
+        </div>
+        <div className="container__main__content__table__content"></div>
+      </div>
+    </>
   );
 }
