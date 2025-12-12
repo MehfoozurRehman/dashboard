@@ -1,0 +1,5 @@
+onlyBuiltDependencies:
+  - '@ckeditor/ckeditor5-react'
+  - '@parcel/watcher'
+  - core-js
+  - core-js-pure
